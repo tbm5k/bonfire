@@ -4,7 +4,7 @@ on:
   push:
     - main
 
-job: 
+jobs: 
   run_test:
     runs-on: windows-latest
     steps: 
