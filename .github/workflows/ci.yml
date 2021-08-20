@@ -2,7 +2,8 @@ name: bonfire ci
 
 on: 
   push:
-    - main
+    branches:
+      - main
 
 jobs: 
   run_test:
