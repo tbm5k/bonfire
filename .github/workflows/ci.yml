@@ -2,7 +2,7 @@ name: bonfire ci
 
 on: 
   push:
-    -main
+    - main
 
 job: 
   run_test:
