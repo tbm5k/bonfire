@@ -3,3 +3,10 @@
     display: flex;
     flex-direction: row;
 }
+
+#header{
+    height: 3.5625rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
