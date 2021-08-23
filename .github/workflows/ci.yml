@@ -2,7 +2,8 @@ name: bonfire ci
 
 on: 
   push:
-    - main
+    branches:
+      - main
 
 jobs: 
   run_test:
@@ -12,5 +13,5 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14.15.4'
-      - run: node ci
+      - run: npm ci
       - run: npm test
