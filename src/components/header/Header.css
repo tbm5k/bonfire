@@ -7,6 +7,8 @@
 #header{
     height: 3.5625rem;
     box-shadow: -2px -2px 20px rgba(255, 165, 0, 25%);
+    position: fixed;
+    width: 100%;
 }
 
 .header{
