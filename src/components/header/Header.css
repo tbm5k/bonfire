@@ -6,6 +6,7 @@
 
 #header{
     height: 3.5625rem;
+    box-shadow: -2px -2px 20px rgba(255, 165, 0, 25%);
 }
 
 .header{
@@ -21,4 +22,9 @@
 
 .header li{
     margin-left: 2rem;
+}
+
+.header h4{
+    font-size: 2.25rem;
+    color: #FFA500;
 }
