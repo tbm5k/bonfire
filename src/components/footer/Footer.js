@@ -28,12 +28,15 @@ function Header(){
                         <li>+254-729-836-336</li>
                         <li>+254-733-527-398</li>
                         <li>+254-715-281-211</li>
-                        <li>0202067788</li>
+                        <li>+254-202-067-788</li>
                         <li>deals@bonfireadventures.com</li>
                         <li>info@bonfireadventures.com</li>
                     </ul>
                 </div>
             </div>
+            <p id="copyright">
+                &copy;All Right Reserved, Bonfire Adventures 2021
+            </p>
         </div>
     );
 }

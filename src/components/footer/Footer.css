@@ -1,6 +1,7 @@
 #footer{
     height: 18.75rem;
     width: 100%;
+    font-size: 0.8125rem;
 }
 
 .footer{
@@ -9,7 +10,6 @@
     margin: 0 auto;
     text-align: left;
     /*padding: 0.8125rem 0;*/
-    font-size: 0.8125rem;
     border-top:1px solid#FFA500;
     border-bottom:1px solid#FFA500;
 
@@ -31,4 +31,10 @@
 
 .footer li{
     padding-bottom: 1.125rem;
+}
+
+#copyright{
+    width: 100%;
+    text-align: center;
+    padding-top: 1rem;
 }
