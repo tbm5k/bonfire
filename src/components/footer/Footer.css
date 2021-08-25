@@ -2,6 +2,7 @@
     /*height: 18.75rem;*/
     width: 100%;
     font-size: 0.8125rem;
+    border-top:1px solid#FFA500;
 }
 
 .footer{
@@ -11,7 +12,6 @@
     padding-top: 1.25rem;
     text-align: left;
     /*padding: 0.8125rem 0;*/
-    border-top:1px solid#FFA500;
     border-bottom:1px solid#FFA500;
 
     display: flex;

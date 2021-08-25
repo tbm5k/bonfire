@@ -6,6 +6,8 @@
 
 #header{
     height: 3.5625rem;
+    background-color: #fff;
+    z-index: 3;
     box-shadow: -2px -2px 20px rgba(255, 165, 0, 25%);
     position: fixed;
     width: 100%;
