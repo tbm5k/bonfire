@@ -1,11 +1,11 @@
 import React from 'react';
 import './Body.css';
-import Banner from '../banner/Banner';
+import Home from '../home/Home';
 
 function Body(){
     return(
         <div id="body">
-            <Banner />
+            <Home />
         </div>
     );
 }
