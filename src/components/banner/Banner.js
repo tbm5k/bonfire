@@ -1,11 +1,11 @@
 import React from 'react';
 import './Banner.css';
-import photo from '../images/giraffe.jpg';
+import Slideshow from '../slideshow/Slideshow';
 
 function Banner(){
     return(
         <div id="banner">
-            <img src={photo} alt="photos of scenaries"/>
+            <Slideshow />
         </div>
     );
 }
