@@ -4,8 +4,10 @@ import './Tile.css';
 function Tile(props){
     return(
         <div id="tile" style={{backgroundImage: `url(${require("../images/slideshow/dubai.jpg")})`}}>
-            <h4>{props.cityName}</h4>
-            <p>{props.text}</p>
+            <div className="caption">
+                <h5>{props.cityName}</h5>
+                <p>{props.text}</p>
+            </div>
         </div>
     );
 }
