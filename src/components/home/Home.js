@@ -9,22 +9,26 @@ function Home(){
         {
             id: 1,
             cityName: 'Mombasa',
-            text: 'Enjoy a holiday at the sea show'
+            text: 'Enjoy a holiday at the sea show',
+            image: '../images/slideshow/dubai.jpg'
         },
         {
             id: 2,
             cityName: 'Nairobi',
-            text: 'Enjoy a holiday at the sea show'
+            text: 'Enjoy a holiday at the sea show',
+            image: '../images/slideshow/girrafe.jpg'
         },
         {
             id: 3,
             cityName: 'Maasai Mara',
-            text: 'Enjoy a holiday at the sea show'
+            text: 'Enjoy a holiday at the sea show',
+            image: '../images/slideshow/zebra.jpg'
         },
         {
             id: 4,
             cityName: 'Naivasha',
-            text: 'Enjoy a holiday at the sea show'
+            text: 'Enjoy a holiday at the sea show',
+            image: '../images/slideshow/girrafe2.jpg'
         }
     ];
 
@@ -35,7 +39,7 @@ function Home(){
             <div id="tiles">
             {
                 tiles.map( tile => (
-                    <Tile key={tile.id} cityName={tile.cityName} text={tile.text}/>
+                    <Tile key={tile.id} cityName={tile.cityName} text={tile.text} image={tile.image}/>
                 ))
             }
             </div>
