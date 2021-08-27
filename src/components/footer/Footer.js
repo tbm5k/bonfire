@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 function Header(){
     return(
@@ -8,8 +10,16 @@ function Header(){
             <div className="footer">
                 <div id="handles">
                     <h4>Social handles</h4>
-                    <div>
-                        <TwitterIcon />
+                    <div id="socialLogos">
+                        <div>
+                            <TwitterIcon style={{ color: "#FFA500"}}/>
+                        </div>
+                        <div>
+                            <InstagramIcon style={{ color: "#FFA500"}}/>
+                        </div>
+                        <div>
+                            <FacebookIcon style={{ color: "#FFA500"}}/>
+                        </div>
                     </div>
                 </div>
                 <div id="about">
