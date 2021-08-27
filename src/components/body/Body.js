@@ -1,7 +1,7 @@
 import React from 'react';
 import './Body.css';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../home/Home';
+import Home from '../../pages/home/Home';
 
 function Body(){
     return(
