@@ -37,14 +37,14 @@ function Header(){
                 <div id="contacts">
                     <h4>Contacts</h4>
                     <ul>
-                        <li>+254-722-879-629</li>
-                        <li>+254-711-222-444</li>
-                        <li>+254-729-836-336</li>
-                        <li>+254-733-527-398</li>
-                        <li>+254-715-281-211</li>
-                        <li>+254-202-067-788</li>
-                        <li>deals@bonfireadventures.com</li>
-                        <li>info@bonfireadventures.com</li>
+                        <li><a href="tel:+254-722-879-629">+254-722-879-629</a></li>
+                        <li><a href="tel:+254-711-222-444">+254-711-222-444</a></li>
+                        <li><a href="tel:+254-729-836-336">+254-729-836-336</a></li>
+                        <li><a href="tel:+254-733-527-398">+254-733-527-398</a></li>
+                        <li><a href="tel:+254-715-281-211">+254-715-281-211</a></li>
+                        <li><a href="tel:+254-202-067-788">+254-202-067-788</a></li>
+                        <li><a href="mailto:deals@bonfireadventures.com">deals@bonfireadventures.com</a></li>
+                        <li><a href="mailto:info@bonfireadventures.com">info@bonfireadventures.com</a></li>
                     </ul>
                 </div>
             </div>
