@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 function Header(){
     return(
@@ -7,6 +8,9 @@ function Header(){
             <div className="footer">
                 <div id="handles">
                     <h4>Social handles</h4>
+                    <div>
+                        <TwitterIcon />
+                    </div>
                 </div>
                 <div id="about">
                     <h4>About us</h4>
