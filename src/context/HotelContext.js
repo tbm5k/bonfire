@@ -1,4 +1,5 @@
-import React, {useState, createContext} from 'react';
+import axios from 'axios';
+import React, {useState, createContext, useEffect} from 'react';
 
 export const HotelContext = createContext();
 
@@ -30,6 +31,19 @@ export const HotelProvider = props => {
             image: '../images/slideshow/girrafe2.jpg'
         }
     ]);
+
+    useEffect(() => {
+        async function getHotels(){
+            try{
+                const hotels = await axios.get("http://localhost:8080/continents");
+                console.log(hotels);
+            } catch (err){
+                console.log("Couldnt fetch data. " + err)
+            }
+        }
+
+        getHotels();
+    }, []);
 
     return(
         <HotelContext.Provider value={[hotels, setHotels]}>
