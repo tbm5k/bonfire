@@ -6,8 +6,8 @@ import {HotelContext} from '../../context/HotelContext';
 
 function Home(){
 
-    const [hotels, setHotels] = useContext(HotelContext);
-
+    const [hotels] = useContext(HotelContext);
+    console.log(hotels)
     return(
         <div id="home">
             <Banner />
@@ -15,7 +15,7 @@ function Home(){
             <div id="tiles">
             {
                 hotels.map( tile => (
-                    <Tile key={tile.id} cityName={tile.cityName} text={tile.text} image={tile.image}/>
+                    <Tile key={tile.cityId} cityName={tile.cityName} text='' image={tile.hotelList[0].imageList[0] || 'null'}/>
                 ))
             }
             </div>

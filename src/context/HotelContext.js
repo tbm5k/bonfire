@@ -5,38 +5,13 @@ export const HotelContext = createContext();
 
 export const HotelProvider = props => {
 
-    const [hotels, setHotels] = useState([
-        {
-            id: 1,
-            cityName: 'Mombasa',
-            text: 'Enjoy a holiday at the sea show',
-            image: '../images/slideshow/dubai.jpg'
-        },
-        {
-            id: 2,
-            cityName: 'Nairobi',
-            text: 'Enjoy a holiday at the sea show',
-            image: '../images/slideshow/girrafe.jpg'
-        },
-        {
-            id: 3,
-            cityName: 'Maasai Mara',
-            text: 'Enjoy a holiday at the sea show',
-            image: '../images/slideshow/zebra.jpg'
-        },
-        {
-            id: 4,
-            cityName: 'Naivasha',
-            text: 'Enjoy a holiday at the sea show',
-            image: '../images/slideshow/girrafe2.jpg'
-        }
-    ]);
+    const [hotels, setHotels] = useState([]);
 
     useEffect(() => {
         async function getHotels(){
             try{
-                const hotels = await axios.get("http://localhost:8080/continents");
-                console.log(hotels);
+                const data = await axios.get("http://localhost:8080/continent/1/country/1/cities");
+                setHotels(data.data);
             } catch (err){
                 console.log("Couldnt fetch data. " + err)
             }
