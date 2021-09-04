@@ -11,13 +11,21 @@ function Home(){
     return(
         <div id="home">
             <Banner />
-            <h2>Places to visit</h2>
-            <div id="tiles">
-            {
-                hotels.map( tile => (
-                    <Tile key={tile.cityId} cityName={tile.cityName} text='' image={tile.hotelList[0].imageList[0] || 'null'}/>
-                ))
-            }
+            <div>
+                <h2>Places to visit</h2>
+                <div id="tiles">
+                {
+                    hotels.map( tile => (
+                        <Tile key={tile.cityId} cityName={tile.cityName} text='' image={tile.hotelList[0].imageList[0] || 'null'}/>
+                    ))
+                }
+                </div>
+                <button>More</button>
+            </div>
+            <div>
+                <h2>Ongoing deals</h2>
+                
+                <button>More</button>
             </div>
         </div>
     );
