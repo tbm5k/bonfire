@@ -12,10 +12,11 @@
 #home button{
     background-color: #FFA500;
     border: none;
-    width: 264px;
-    height: 47px;
+    width: 164px;
+    height: 37px;;
     border-radius: 15px;
     font-size: 15px;
     font-weight: bold;
     color: #fff;
+    margin-top: 1.5rem;
 }

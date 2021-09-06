@@ -3,6 +3,7 @@ import './Home.css';
 import Banner from '../../components/banner/Banner';
 import Tile from '../../components/tile/Tile';
 import {HotelContext} from '../../context/HotelContext';
+import Cube from '../../components/cube/Cube';
 
 function Home(){
 
@@ -24,7 +25,13 @@ function Home(){
             </div>
             <div>
                 <h2>Ongoing deals</h2>
-                
+                <div id="cubes">
+                    {
+                        hotels.map(city => (
+                            <Cube cityName={city.cityName} offer={"10% discount"}/>
+                        ))
+                    }
+                </div>
                 <button>More</button>
             </div>
         </div>
