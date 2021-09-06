@@ -9,8 +9,12 @@ export const ContinentProvider = ({children}) => {
 
     useEffect(() => {
         async function getContinents(){
-            let data = await axios.get('localhost:8080/continents')
-            setContinents(data.data)
+            try{
+                let data = await axios.get('localhost:8080/continents')
+                setContinents(data.data)
+            } catch (err){
+                console.log("Couldnt fetch continents. " + err)
+            }
         }
         getContinents();
     }, []);
