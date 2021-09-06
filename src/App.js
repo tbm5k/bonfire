@@ -4,17 +4,20 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Body from './components/body/Body';
 import {HotelProvider} from './context/HotelContext';
+import {ContinentProvider} from './context/ContinentContext';
 
 function App() {
   return (
     <HotelProvider>
-      <div className="App">
-        <Router>
-          <Header />
-          <Body />
-          <Footer />  
-        </Router>
-      </div>
+      <ContinentProvider>
+        <div className="App">
+          <Router>
+            <Header />
+            <Body />
+            <Footer />  
+          </Router>
+        </div>
+      </ContinentProvider>
     </HotelProvider>
   );
 }
