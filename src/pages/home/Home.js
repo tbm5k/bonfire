@@ -8,7 +8,6 @@ import Cube from '../../components/cube/Cube';
 function Home(){
 
     const [hotels] = useContext(HotelContext);
-    console.log(hotels)
     return(
         <div id="home">
             <Banner />
@@ -17,7 +16,7 @@ function Home(){
                 <div id="tiles">
                 {
                     hotels.map( tile => (
-                        <Tile key={tile.cityId} cityName={tile.cityName} text='' image={tile.hotelList[0].imageList[0] || 'null'}/>
+                        <Tile key={tile.cityId} cityName={tile.cityName} text='' image={'null'}/>
                     ))
                 }
                 </div>
@@ -28,7 +27,7 @@ function Home(){
                 <div id="cubes">
                     {
                         hotels.map(city => (
-                            <Cube cityName={city.cityName} offer={"10% discount"}/>
+                            <Cube key={city.cityId} cityName={city.cityName} offer={"10% discount"}/>
                         ))
                     }
                 </div>

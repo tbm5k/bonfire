@@ -19,11 +19,10 @@ export const ContinentProvider = ({children}) => {
         }
 
         getContinents();
-
     }, []);
 
     return(
-        <ContinentContext.Provider value={continents}>
+        <ContinentContext.Provider value={[continents]}>
             {children}
         </ContinentContext.Provider>
     );
