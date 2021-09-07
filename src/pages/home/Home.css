@@ -6,6 +6,7 @@
 #tiles{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -19,4 +20,11 @@
     font-weight: bold;
     color: #fff;
     margin-top: 1.5rem;
+}
+
+#home #cubes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }

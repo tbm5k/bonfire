@@ -27,7 +27,7 @@ function Home(){
                 <div id="cubes">
                     {
                         hotels.map(city => (
-                            <Cube key={city.cityId} cityName={city.cityName} offer={"10% discount"}/>
+                            <Cube key={city.cityId} placeName={city.cityName} offer={"10% discount"}/>
                         ))
                     }
                 </div>

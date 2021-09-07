@@ -11,16 +11,24 @@ export default function Places(){
     console.log(continents)
     return(
         <div id="places">
-            <div>
-                <Banner />
-            </div>
-            <div id="continents">
+            <Banner />
                 {
                     continents.map( continent => (
-                        <Cube key={continent.continentId} />
+                        <div id="continents">
+                            <h2>{continent.continentName}</h2>
+                            {console.log(continent.countryList)}
+                            <div id="countries">
+                                {
+                                    continent.countryList.map( country => (
+                                        <div>
+                                            <Cube key={country.countryId} placeName={country.countryName}/>                                
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
                     ))
                 }
-            </div>
         </div>
     );
 }
