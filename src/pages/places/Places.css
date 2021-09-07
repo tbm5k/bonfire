@@ -6,3 +6,10 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
+
+#countries{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
