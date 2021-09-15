@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import './Home.css';
+//import './Home.css';
 import Banner from '../../components/banner/Banner';
 import Tile from '../../components/tile/Tile';
 import {HotelContext} from '../../context/HotelContext';
@@ -11,27 +11,27 @@ function Home(){
     return(
         <div id="home">
             <Banner />
-            <div>
-                <h2>Places to visit</h2>
-                <div id="tiles">
+            <div className='flex flex-col mt-9 mb-9'>
+                <h2 className='text-center text-4xl font-bold'>Places to visit</h2>
+                <div className="flex flex-row justify-evenly flex-wrap mt-6 mb-6">
                 {
                     hotels.map( tile => (
                         <Tile key={tile.cityId} cityName={tile.cityName} text='' image={'null'}/>
                     ))
                 }
                 </div>
-                <button>More</button>
+                <button className='bg-bonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
             </div>
-            <div>
-                <h2>Ongoing deals</h2>
-                <div id="cubes">
+            <div className='flex flex-col mt-9 mb-9'>
+                <h2 className='text-center text-4xl font-bold'>Ongoing deals</h2>
+                <div className="flex flex-row justify-evenly flex-wrap mt-6 mb-6">
                     {
                         hotels.map(city => (
                             <Cube key={city.cityId} placeName={city.cityName} offer={"10% discount"}/>
                         ))
                     }
                 </div>
-                <button>More</button>
+                <button className='bg-bonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
             </div>
         </div>
     );
