@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 const Home = lazy(() => import('../../pages/home/Home'));
 const Places = lazy(() => import('../../pages/places/Places'));
 const Deals = lazy(() => import('../../pages/deals/Deals'));
-const NotFound = (() => import('../../pages/notfound/NotFound'));
+const NotFound = lazy(() => import('../../pages/notfound/NotFound'));
 
 function Body(){
     return(
