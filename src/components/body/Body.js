@@ -1,19 +1,23 @@
-import React from 'react';
+import React, {lazy, Suspense} from 'react';
 import './Body.css';
 import { Switch, Route } from 'react-router-dom';
 import Home from '../../pages/home/Home';
 import NotFound from '../../pages/notfound/NotFound';
-import Places from '../../pages/places/Places';
+
+const Places = lazy(() => import('../../pages/places/Places'));
+const Deals = lazy(() => import('../../pages/deals/Deals'));
 
 function Body(){
     return(
         <div id="body">
-            <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route path="/places" component={Places}/>
-                <Route path="/deals">deals</Route>
-                <Route component={NotFound}/>
-            </Switch>
+            <Suspense fallback={<p>Loading...</p>}>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/places" component={Places}/>
+                    <Route path="/deals" component={Deals}/>
+                    <Route component={NotFound}/>
+                </Switch>
+            </Suspense>
         </div>
     );
 }
