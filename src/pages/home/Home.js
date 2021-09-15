@@ -20,7 +20,7 @@ function Home(){
                     ))
                 }
                 </div>
-                <button className='bg-bonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
+                <button className='bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
             </div>
             <div className='flex flex-col mt-9 mb-9'>
                 <h2 className='text-center text-4xl font-bold'>Ongoing deals</h2>
@@ -31,7 +31,7 @@ function Home(){
                         ))
                     }
                 </div>
-                <button className='bg-bonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
+                <button className='bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
             </div>
         </div>
     );

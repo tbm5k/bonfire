@@ -26,7 +26,7 @@ export default function Places(){
                                     ))
                                 }
                             </div>
-                            <button className='bg-bonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
+                            <button className='bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
                         </div>
                     ))
                 }
