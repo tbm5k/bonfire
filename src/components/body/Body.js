@@ -1,11 +1,11 @@
 import React, {lazy, Suspense} from 'react';
 import './Body.css';
 import { Switch, Route } from 'react-router-dom';
-import Home from '../../pages/home/Home';
-import NotFound from '../../pages/notfound/NotFound';
 
+const Home = lazy(() => import('../../pages/home/Home'));
 const Places = lazy(() => import('../../pages/places/Places'));
 const Deals = lazy(() => import('../../pages/deals/Deals'));
+const NotFound = (() => import('../../pages/notfound/NotFound'));
 
 function Body(){
     return(
