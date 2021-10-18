@@ -1,0 +1,19 @@
+.cube{
+    width: 6.25rem;
+}
+
+.cube img{
+    object-fit: cover;
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 0.9375rem;
+}
+
+.cube .text{
+    font-size: 0.9375rem;
+    text-align: center;
+}
+
+.cube .placeName{
+    font-weight: bold;
+}

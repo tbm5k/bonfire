@@ -1,0 +1,30 @@
+#home h2{
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+#tiles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#home button{
+    background-color: #FFA500;
+    border: none;
+    width: 164px;
+    height: 37px;;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 1.5rem;
+}
+
+#home #cubes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
