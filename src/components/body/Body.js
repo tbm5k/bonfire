@@ -6,6 +6,7 @@ const Home = lazy(() => import('../../pages/home/Home'));
 const Places = lazy(() => import('../../pages/places/Places'));
 const Deals = lazy(() => import('../../pages/deals/Deals'));
 const NotFound = lazy(() => import('../../pages/notfound/NotFound'));
+const Item = lazy(() => import('../../pages/item/Item'));
 
 function Body(){
     return(
@@ -15,6 +16,7 @@ function Body(){
                     <Route exact path="/" component={Home}/>
                     <Route path="/places" component={Places}/>
                     <Route path="/deals" component={Deals}/>
+                    <Route path="/item" component={Item}/>
                     <Route component={NotFound}/>
                 </Switch>
             </Suspense>
