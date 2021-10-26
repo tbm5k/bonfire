@@ -8,9 +8,12 @@ export const HotelProvider = props => {
     const [hotels, setHotels] = useState([]);
 
     useEffect(() => {
+
+        const baseurl = process.env.REACT_APP_BASE_URL;
+
         async function getHotels(){
             try{
-                const data = await axios.get("http://localhost:8080/continent/1/country/1/cities");
+                const data = await axios.get(`${baseurl}/continent/1/country/1/cities`);
                 setHotels(data.data);
             } catch (err){
                 console.log("Couldnt fetch data. " + err)
