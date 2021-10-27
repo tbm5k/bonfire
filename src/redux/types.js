@@ -1,4 +1,2 @@
 export const SET_HOTELS = 'SET_HOTELS';
-export const LIST_HOTELS = 'LIST_HOTELS';
 export const SET_CONTINENTS = 'SET_CONTINENTS';
-export const LIST_CONTINENTS = 'LIST_CONTINENTS';

@@ -4,13 +4,32 @@ import Banner from '../../components/banner/Banner';
 import Tile from '../../components/tile/Tile';
 import {HotelContext} from '../../context/HotelContext';
 import Cube from '../../components/cube/Cube';
-import { setContinents } from '../../redux/actions/continentActions';
+import {setHotels} from '../../redux/actions/hotelActions';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux'
 
 function Home(){
 
     //const [hotels] = useContext(HotelContext);
+    const dispatch = useDispatch();
+
+    const fetchHotels = async () => {
+        await axios.get(`${process.env.REACT_APP_BASE_URL}/continent/1/country/1/cities`)
+        .then(res => {
+            dispatch(setHotels(res.data))
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
+
+    useEffect( () => {
+        fetchHotels()
+    }, [])
+
+    const hotels = useSelector( state => state.hotels.hotels)
+    //console.log(hotels)
+    //console.log(hotels.length)
 
     return(
         <div id="home">

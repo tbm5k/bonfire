@@ -33,8 +33,8 @@ export default function Places(){
 
     //retreiving the redux state for viewing purposes by use of the useSelector hook
     const continents = useSelector( state => state.continents.continents)
-    console.log(continents.length)
-
+    console.log(continents)
+    
 
     return(
         <div>
