@@ -1,9 +1,12 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 //import './Home.css';
 import Banner from '../../components/banner/Banner';
 import Tile from '../../components/tile/Tile';
 import {HotelContext} from '../../context/HotelContext';
 import Cube from '../../components/cube/Cube';
+import { setContinents } from '../../redux/actions/continentActions';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux'
 
 function Home(){
 
