@@ -1,4 +1,4 @@
-import { SET_HOTELS, FETCH_HOTELS } from "../types";
+import { FETCH_HOTELS } from "../types";
 
 export const hotelReducer = (state = [], action) => {
     switch(action.type){
