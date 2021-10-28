@@ -23,3 +23,10 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+
+# yarn 
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+
