@@ -1,34 +1,15 @@
-import React, {useContext, useEffect} from 'react';
-//import './Places.css';
+import React, { useEffect } from 'react';
 import Banner from '../../components/banner/Banner';
-import {ContinentContext} from '../../context/ContinentContext';
 import Cube from '../../components/cube/Cube';
 import { useDispatch, useSelector } from 'react-redux';
-import { setContinents } from '../../redux/actions/continentActions';
-import axios from 'axios'
+import { fetchContinents } from '../../redux/actions/continentActions';
 
 export default function Places(){
 
-    //const [continents] = useContext(ContinentContext);
-
-    //data fetching from the api and setting the redux state
-    /*
-    A good practise would be to put this logic into an action
-    */
     const dispatch = useDispatch();
-    const fetchContinents = async () => {
-        await axios
-        .get(`${process.env.REACT_APP_BASE_URL}/continents`)
-        .then( res => {
-            dispatch(setContinents(res.data));
-        })
-        .catch(err => {
-            console.log(err)
-        })
-    }
-
+    
     useEffect(() => {
-        fetchContinents();
+        dispatch(fetchContinents());
     }, [])
 
     //retreiving the redux state for viewing purposes by use of the useSelector hook

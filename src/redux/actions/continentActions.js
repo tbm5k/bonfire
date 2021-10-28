@@ -1,8 +1,12 @@
-import { SET_CONTINENTS } from "../types"
+import axios from "axios"
+import { FETCH_CONTINENTS} from "../types"
 
-export const setContinents = (continents) => {
-    return {
-        type : SET_CONTINENTS, 
-        payload : continents
-    }
+export const fetchContinents = () => async dispatch => {
+    await axios.get(`${process.env.REACT_APP_BASE_URL}/continents`)
+    .then( res => {
+        dispatch({type: FETCH_CONTINENTS, payload: res.data})
+    })
+    .catch( err => {
+        console.log(`Error message: ${err}`)
+    })
 }
