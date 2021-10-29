@@ -11,6 +11,7 @@ function Home(){
 
     useEffect( () => {
         dispatch(fetchHotels())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const hotels = useSelector( (state) => state.hotels.hotels)
