@@ -1,10 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../../components/banner/Banner';
 import Cube from '../../components/cube/Cube';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContinents } from '../../redux/actions/continentActions';
+import { Modal } from 'antd';
+import 'antd/dist/antd.css';
 
 export default function Places(){
+
+    
+    const [show, setShow] = useState(false)
+
+    const showPopup = () => {
+        setShow(true);
+    }
+
+    const closePopup = () => {
+        setShow(false);
+    }
 
     const dispatch = useDispatch();
     
@@ -32,10 +45,26 @@ export default function Places(){
                                     ))
                                 }
                             </div>
-                            <button className='bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
+                            <button className='bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto' onClick={showPopup}>More</button>
+                            <Popup show={show} close={closePopup}/>
                         </div>
                     ))) : <div>Empty list</div>
                 }
         </div>
+    );
+}
+
+
+const Popup = (props) => {
+
+    return(
+       <Modal title={`Country name`} visible={props.show} onCancel={props.close}>
+           <ul>
+               <li>Mombasa</li>
+               <li>Nairobi</li>
+               <li>Kisumu</li>
+               <li>Nakuru</li>
+           </ul>
+       </Modal> 
     );
 }
