@@ -10,6 +10,7 @@ export default function Places(){
     
     useEffect(() => {
         dispatch(fetchContinents());
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     //retreiving the redux state for viewing purposes by use of the useSelector hook
