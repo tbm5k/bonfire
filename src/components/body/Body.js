@@ -16,7 +16,7 @@ function Body(){
                     <Route exact path="/" component={Home}/>
                     <Route path="/places" component={Places}/>
                     <Route path="/deals" component={Deals}/>
-                    <Route path="/item" component={Item}/>
+                    <Route path="/item/:id" component={Item}/>
                     <Route component={NotFound}/>
                 </Switch>
             </Suspense>
