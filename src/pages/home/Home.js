@@ -33,7 +33,8 @@ function Home(){
                 </div>
                 <Link to="/places" className='bg-bonfireorange hover:bg-darkbonfireorange rounded-xl w-52 h-11 mx-auto'>
                     <button className="h-full w-full text-center text-white font-bold">More</button>
-                </Link>            </div>
+                </Link>            
+            </div>
             <div className='flex flex-col mt-9 mb-9'>
                 <h2 className='text-center text-4xl font-bold'>Ongoing deals</h2>
                 <div className="flex flex-row justify-evenly flex-wrap mt-6 mb-6">

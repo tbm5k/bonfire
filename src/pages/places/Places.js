@@ -3,7 +3,7 @@ import Banner from '../../components/banner/Banner';
 import Cube from '../../components/cube/Cube';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContinents } from '../../redux/actions/continentActions';
-import Modal from '../../components/popup/Modal';
+import { Link } from 'react-router-dom';
 
 export default function Places(){
 
@@ -33,8 +33,9 @@ export default function Places(){
                                     ))
                                 }
                             </div>
-                            <button className='bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-52 h-11 mx-auto'>More</button>
-                            <Modal />
+                            <Link to={`/country/${continent.continentId}`} className='bg-bonfireorange hover:bg-darkbonfireorange rounded-xl w-52 h-11 mx-auto'>
+                                <button className="h-full w-full text-center text-white font-bold">More</button>
+                            </Link>
                         </div>
                     ))) : <div>Empty list</div>
                 }
