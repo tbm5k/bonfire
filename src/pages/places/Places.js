@@ -33,7 +33,7 @@ export default function Places(){
                                     ))
                                 }
                             </div>
-                            <Link to={`/country/${continent.continentId}`} className='bg-bonfireorange hover:bg-darkbonfireorange rounded-xl w-52 h-11 mx-auto'>
+                            <Link to={`/continent/${continent.continentId}`} className='bg-bonfireorange hover:bg-darkbonfireorange rounded-xl w-52 h-11 mx-auto'>
                                 <button className="h-full w-full text-center text-white font-bold">More</button>
                             </Link>
                         </div>

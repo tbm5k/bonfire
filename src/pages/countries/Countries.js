@@ -7,10 +7,10 @@ import { useParams } from 'react-router-dom'
 const Countries = () => {
 
     const { continentId } = useParams();
-    console.log(continentId)
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        fetchCountries();
+        dispatch(fetchCountries(continentId));
     }, []);
 
     return (
