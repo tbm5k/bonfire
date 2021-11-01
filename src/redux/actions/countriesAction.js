@@ -4,7 +4,6 @@ import { FETCH_COUNTRIES } from '../types';
 export const fetchCountries = (continentId) => async (dispatch) => {
     await axios.get(`${process.env.REACT_APP_BASE_URL}/continent/${continentId}/countries`)
     .then(res => {
-        console.log(res.data)
         dispatch({
             type: FETCH_COUNTRIES,
             payload: res.data
