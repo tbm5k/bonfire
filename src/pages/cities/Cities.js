@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { lazy } from 'react'
 
-const Cities = () => {
+const Tile = lazy(() => import('../../components/tile/Tile'))
+
+const Cities = ({match}) => {
+
     return(
         <div>
-            Cities
+            <Tile />
         </div>
     );
 };

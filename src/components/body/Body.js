@@ -8,6 +8,7 @@ const Deals = lazy(() => import('../../pages/deals/Deals'));
 const NotFound = lazy(() => import('../../pages/notfound/NotFound'));
 const Item = lazy(() => import('../../pages/item/Item'));
 const Countries = lazy(() => import('../../pages/countries/Countries'));
+const Cities = lazy(() => import('../../pages/cities/Cities'))
 
 function Body(){
     return(
@@ -16,7 +17,8 @@ function Body(){
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route path="/places" component={Places}/>
-                    <Route path="/continent/:continentId" component={Countries}/>
+                    <Route exact path="/continent/:continentId" component={Countries}/>
+                    <Route path="/continent/:continentId/country/:countryId" component={Cities}/>
                     <Route path="/deals" component={Deals}/>
                     <Route path="/item/:id" component={Item}/>
                     <Route component={NotFound}/>

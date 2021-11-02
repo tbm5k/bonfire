@@ -3,12 +3,10 @@ import Cube from '../../components/cube/Cube';
 import { fetchCountries } from '../../redux/actions/countriesAction';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import { Link, Route, useRouteMatch } from 'react-router-dom';
-import Cities from '../cities/Cities';
+import { Link } from 'react-router-dom';
 
-const Countries = () => {
+const Countries = ({match}) => {
 
-    const { path, url } = useRouteMatch();
     const { continentId } = useParams();
     const dispatch = useDispatch();
 
@@ -23,7 +21,7 @@ const Countries = () => {
             {
                 countries !== undefined ? (
                     countries.map( country => (
-                        <Link to={`${url}/country/${country.countryId}`}>
+                        <Link to={`${match.url}/country/${country.countryId}`}>
                             <Cube key={country.countryId} placeName={country.countryName}/>
                         </Link>
                     ))
@@ -31,7 +29,6 @@ const Countries = () => {
                     <div>No countries</div>
                 )
             }
-            <Route path={`${path}/country/:countryId`} component={Cities}/>
         </div>
     );
 };
