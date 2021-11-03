@@ -14,11 +14,20 @@ const Cities = ({match}) => {
     }, []);
 
     return(
-        <div>
+        <div className="w-full">
             {
                 cities.cities !== undefined ? (
                     cities.cities.cityList.map( city => (
-                        <Tile />
+                        <div>
+                            <h3 className="font-semibold">{city.cityName}</h3>
+                            {
+                                city.hotelList.map( hotel => (
+                                    <div className="flex justify-between flex-row">
+                                        <Tile placeName={hotel.hotelName} image={hotel.imageList[0]}/>
+                                    </div>
+                                ))
+                            }
+                        </div>
                     ))
                 ) : (
                     <div>No cities</div>
