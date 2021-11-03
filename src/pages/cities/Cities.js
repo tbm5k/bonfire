@@ -1,6 +1,7 @@
 import React, { lazy, useEffect } from 'react'
 import { fetchCities } from '../../redux/actions/citiesActions';
 import { useDispatch, useSelector } from 'react-redux'; 
+import { Link } from 'react-router-dom';
 
 const Tile = lazy(() => import('../../components/tile/Tile'))
 
@@ -23,7 +24,9 @@ const Cities = ({match}) => {
                             {
                                 city.hotelList.map( hotel => (
                                     <div className="flex justify-between flex-row">
-                                        <Tile placeName={hotel.hotelName} image={hotel.imageList[0]}/>
+                                        <Link to={`${match.url}/hotel/${hotel.hotelId}`}>
+                                            <Tile placeName={hotel.hotelName} image={hotel.imageList[0]}/>
+                                        </Link>
                                     </div>
                                 ))
                             }
