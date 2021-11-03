@@ -7,7 +7,6 @@ const Tile = lazy(() => import('../../components/tile/Tile'))
 const Cities = ({match}) => {
 
     const cities = useSelector( state => state.cities);
-    console.log(cities.cities.cityList)
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -17,11 +16,11 @@ const Cities = ({match}) => {
     return(
         <div>
             {
-                cities.cities.cityList !== undefined ? (
-                    cities.cities.cityList.map(city => {
+                cities.cities !== undefined ? (
+                    cities.cities.cityList.map( city => (
                         <Tile />
-                    })
-                ): (
+                    ))
+                ) : (
                     <div>No cities</div>
                 )
             }
