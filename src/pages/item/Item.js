@@ -1,6 +1,15 @@
 import React from 'react';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
 
 function Item(){
+
+    const images = [
+        {url: ""},
+        {url: ""},
+        {url: ""},
+    ];
+
     return(
         <div className="">
             <div className="flex flex-row justify-between">
@@ -35,7 +44,17 @@ function Item(){
                 </div>
             </div>
             <div className="">
-                    Image slideshow
+                <Slide>
+                    {
+                        images.map( image => (
+                            <div>
+                                <div style={{'backgroundImage': `url(${image.url})`}}>
+                                    <p>Slide show</p>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </Slide>
             </div>
         </div>
     );

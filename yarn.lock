@@ -2497,6 +2497,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tweenjs/tween.js@npm:^18.1.2":
+  version: 18.6.4
+  resolution: "@tweenjs/tween.js@npm:18.6.4"
+  checksum: 47208db3f6c32cde80284a852d0fca016284f90c4798eb4ebb2ebfc2e379504007bf0c031c2c33044df8a0878fd1942ebc4e0b7f5b8bcccf812b532ea1ee73eb
+  languageName: node
+  linkType: hard
+
 "@types/aria-query@npm:^4.2.0":
   version: 4.2.2
   resolution: "@types/aria-query@npm:4.2.2"
@@ -4152,6 +4159,7 @@ __metadata:
     react-redux: ^7.2.5
     react-router-dom: ^5.2.0
     react-scripts: 4.0.3
+    react-slideshow-image: ^3.6.0
     redux: ^4.1.1
     redux-thunk: ^2.4.0
     tailwindcss: "npm:@tailwindcss/postcss7-compat@^2.2.14"
@@ -13049,6 +13057,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-slideshow-image@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "react-slideshow-image@npm:3.6.0"
+  dependencies:
+    "@tweenjs/tween.js": ^18.1.2
+    resize-observer-polyfill: ^1.5.1
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0
+    react-dom: ^0.14.0 || ^15.0.1 || ^16.0.0 || ^17.0.0
+  checksum: f1900f7a7d566c66776e4eb92df8428b5a98207ce066d5e5b502c283c60a131e0efbe0f4cea0b184991de05d9d22fedb3fb5d18be5eecd3d6192a4c90e58fcea
+  languageName: node
+  linkType: hard
+
 "react-transition-group@npm:^4.4.0":
   version: 4.4.2
   resolution: "react-transition-group@npm:4.4.2"
@@ -13361,6 +13382,13 @@ __metadata:
   version: 1.0.0
   resolution: "requires-port@npm:1.0.0"
   checksum: eee0e303adffb69be55d1a214e415cf42b7441ae858c76dfc5353148644f6fd6e698926fc4643f510d5c126d12a705e7c8ed7e38061113bdf37547ab356797ff
+  languageName: node
+  linkType: hard
+
+"resize-observer-polyfill@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "resize-observer-polyfill@npm:1.5.1"
+  checksum: 57e7f79489867b00ba43c9c051524a5c8f162a61d5547e99333549afc23e15c44fd43f2f318ea0261ea98c0eb3158cca261e6f48d66e1ed1cd1f340a43977094
   languageName: node
   linkType: hard
 

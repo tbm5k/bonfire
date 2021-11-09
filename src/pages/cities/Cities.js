@@ -1,9 +1,8 @@
-import React, { lazy, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { fetchCities } from '../../redux/actions/citiesActions';
 import { useDispatch, useSelector } from 'react-redux'; 
 import { Link } from 'react-router-dom';
-
-const Tile = lazy(() => import('../../components/tile/Tile'))
+import Tile from '../../components/tile/Tile';
 
 const Cities = ({match}) => {
 
