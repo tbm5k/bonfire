@@ -1,13 +1,13 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
+import './item.css';
 
 function Item(){
 
     const images = [
-        {url: ""},
-        {url: ""},
-        {url: ""},
+        {url: "https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg"},
+        {url: "https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg"},
     ];
 
     return(
@@ -43,15 +43,15 @@ function Item(){
                     </div>
                 </div>
             </div>
-            <div className="">
+
+            {/* Image slideshow */}
+            <div>
                 <Slide>
                     {
                         images.map( image => (
-                            <div>
-                                <div style={{'backgroundImage': `url(${image.url})`}}>
-                                    <p>Slide show</p>
-                                </div>
-                            </div>
+                            <div className="h-60 w-80 rounded-2xl mr-4 bg-gray-400" style={{'backgroundImage': `url(${image.url})`}}>
+                                <p>Slide show</p>
+                            </div>                        
                         ))
                     }
                 </Slide>
