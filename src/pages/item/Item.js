@@ -13,7 +13,7 @@ function Item(){
     return(
         <div className="">
             <div className="flex flex-row justify-between">
-                <img className="h-96 w-80 rounded-2xl" src="https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg" alt=""/>
+                <img className="h-96 w-80 object-cover rounded-2xl" src="https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg" alt=""/>
                 <div className="flex flex-col justify-between w-1/2">      
                     <p className="font-bold">Continental Resort</p>   
                     <table className="table-auto text-sm text-left w-full">
@@ -45,12 +45,12 @@ function Item(){
             </div>
 
             {/* Image slideshow */}
-            <div>
+            <div className=" mt-14">
                 <Slide>
                     {
                         images.map( image => (
-                            <div className="h-60 w-80 rounded-2xl mr-4 bg-gray-400" style={{'backgroundImage': `url(${image.url})`}}>
-                                <p>Slide show</p>
+                            <div className=" h-40 w-80 my-auto rounded-2xl mr-4 bg-gray-400" style={{'backgroundImage': `url(${image.url})`}}>
+                                
                             </div>                        
                         ))
                     }

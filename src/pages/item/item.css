@@ -5,3 +5,11 @@
 .react-slideshow-container .default-nav{
     background: none;
 }
+
+.images-wrap > div{
+    width: 240px;
+}
+
+.images-wrap > .active {
+    width: 240px;
+}
