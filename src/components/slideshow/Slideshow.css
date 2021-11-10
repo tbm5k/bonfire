@@ -17,3 +17,7 @@
 .react-slideshow-container > button > svg{
     display: none;
 }
+
+.active {
+    margin-right: 1rem;
+}
