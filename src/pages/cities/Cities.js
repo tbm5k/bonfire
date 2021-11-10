@@ -20,15 +20,17 @@ const Cities = ({match}) => {
                     cities.cities.cityList.map( city => (
                         <div>
                             <h3 className="font-semibold">{city.cityName}</h3>
+                            <div className="flex flex-row justify-evenly">
                             {
                                 city.hotelList.map( hotel => (
-                                    <div className="flex justify-between flex-row">
+                                    <div>
                                         <Link to={`${match.url}/hotel/${hotel.hotelId}`}>
                                             <Tile placeName={hotel.hotelName} image={hotel.imageList[0]}/>
                                         </Link>
                                     </div>
                                 ))
                             }
+                            </div>
                         </div>
                     ))
                 ) : (
