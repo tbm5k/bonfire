@@ -48,7 +48,7 @@
     flex-direction: column;
 }
 
-#socialLogos div{
+#socialLogos a{
     margin-bottom: 2rem;
 }
 

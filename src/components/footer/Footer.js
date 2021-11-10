@@ -11,15 +11,15 @@ function Header(){
                 <div id="handles">
                     <h4>Social handles</h4>
                     <div id="socialLogos">
-                        <div>
+                        <a href="https://twitter.com/bonfiresafaris" target="_blank">
                             <TwitterIcon style={{ color: "#FFA500"}}/>
-                        </div>
-                        <div>
+                        </a>
+                        <a href="https://www.instagram.com/bonfireadventures" target="_blank">
                             <InstagramIcon style={{ color: "#FFA500"}}/>
-                        </div>
-                        <div>
+                        </a>
+                        <a href="https://web.facebook.com/bonfireadventures" target="_blank">
                             <FacebookIcon style={{ color: "#FFA500"}}/>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div id="about">
