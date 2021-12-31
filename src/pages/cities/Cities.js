@@ -9,6 +9,8 @@ const Cities = ({match}) => {
     const cities = useSelector( state => state.cities);
     const dispatch = useDispatch();
 
+    console.log(match)
+
     useEffect(() => {
         dispatch(fetchCities(match.url));
     }, []);
@@ -24,7 +26,7 @@ const Cities = ({match}) => {
                             {
                                 city.hotelList.map( hotel => (
                                     <div className=' mx-3.5'>
-                                        <Link to={`${match.url}/hotel/${hotel.hotelId}`}>
+                                        <Link to={`${match.url}/city/${city.cityId}/hotel/${hotel.hotelId}`}>
                                             <Tile placeName={hotel.hotelName} image={hotel.imageList[0]}/>
                                         </Link>
                                     </div>

@@ -2,3 +2,4 @@ export const FETCH_CONTINENTS = 'FETCH_CONTINENTS';
 export const FETCH_HOTELS = 'FETCH_HOTELS';
 export const FETCH_COUNTRIES = 'FETCH_COUNTRIES';
 export const FETCH_CITIES = 'FETCH_CITIES';
+export const FETCH_HOTEL = 'FETCH_HOTEL';

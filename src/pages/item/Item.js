@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchHotel } from '../../redux/actions/hotelActions';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import './item.css';
@@ -6,6 +8,13 @@ import './item.css';
 function Item({match}){
 
     console.log(match)
+    const hotel = useSelector(state => state.hotel)
+    const dispatch = useDispatch()
+
+    useEffect(() => {  
+        dispatch(fetchHotel(match.url))
+        console.log("runnig the effect")
+    }, [])
 
     const images = [
         {url: "https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg"},
