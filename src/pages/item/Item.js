@@ -3,7 +3,9 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import './item.css';
 
-function Item(){
+function Item({match}){
+
+    console.log(match)
 
     const images = [
         {url: "https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg"},
