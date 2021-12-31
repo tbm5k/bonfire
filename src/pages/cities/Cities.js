@@ -14,16 +14,16 @@ const Cities = ({match}) => {
     }, []);
 
     return(
-        <div className="w-full">
+        <div className="">
             {
                 cities.cities !== undefined ? (
                     cities.cities.cityList.map( city => (
                         <div>
                             <h3 className="font-semibold">{city.cityName}</h3>
-                            <div className="flex flex-row justify-evenly">
+                            <div className="flex flex-row justify-evenly flex-wrap">
                             {
                                 city.hotelList.map( hotel => (
-                                    <div>
+                                    <div className=' mx-3.5'>
                                         <Link to={`${match.url}/hotel/${hotel.hotelId}`}>
                                             <Tile placeName={hotel.hotelName} image={hotel.imageList[0]}/>
                                         </Link>

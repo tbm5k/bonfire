@@ -12,7 +12,7 @@ const Cities = lazy(() => import('../../pages/cities/Cities'))
 
 function Body(){
     return(
-        <div id="body">
+        <div className=' pt-24 pb-14 w-9/12 mx-auto'>
             <Suspense fallback={<p>Loading...</p>}>
                 <Switch>
                     <Route exact path="/" component={Home}/>
