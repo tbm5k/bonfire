@@ -19,7 +19,7 @@ function Body(){
                     <Route path="/places" component={Places}/>
                     <Route exact path="/continent/:continentId" component={Countries}/>
                     <Route exact path="/continent/:continentId/country/:countryId" component={Cities}/>
-                    <Route exact path="/continent/:continentId/country/:countryId/hotel/:hotelId" component={Item}/>
+                    <Route exact path="/continent/:continentId/country/:countryId/city/:cityId/hotel/:hotelId" component={Item}/>
                     <Route path="/deals" component={Deals}/>
                     {/* <Route path="/item/:id" component={Item}/> */}
                     <Route component={NotFound}/>
