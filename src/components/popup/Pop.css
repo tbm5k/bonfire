@@ -1,0 +1,40 @@
+.popup-content {
+   background: white;
+   width: 60%;
+   padding: 1.5rem;
+   border-radius: 1rem;
+}
+
+.popup-overlay {
+    background: rgba(255,165,0, .1);
+    backdrop-filter: blur(5px);
+}
+
+.modal {
+    font-size: 12px;
+  }
+  .modal > .header {
+    width: 100%;
+    border-bottom: 1px solid orange;
+    font-size: 18px;
+    text-align: center;
+    padding: 5px;
+  }
+  .modal > .content {
+    width: 100%;
+    padding: 10px 5px;
+  }
+ 
+  .modal > .close {
+    cursor: pointer;
+    position: absolute;
+    display: block;
+    padding: 2px 5px;
+    line-height: 20px;
+    right: -10px;
+    top: -10px;
+    font-size: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #cfcece;
+  }
