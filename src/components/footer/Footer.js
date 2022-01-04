@@ -3,8 +3,43 @@ import './Footer.css';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import Pop from '../Pop';
 
 function Header(){
+
+    const abouts = [
+        {
+            key: 1,
+            btnName: 'Offices', 
+            txt: ''
+        },
+        {
+            key: 2,
+            btnName: 'Services', 
+            txt: ''
+        },
+        {
+            key: 3,
+            btnName: 'Vision', 
+            txt: ''
+        },
+        {
+            key: 4,
+            btnName: 'Environmental mission', 
+            txt: ''
+        },
+        {
+            key: 5,
+            btnName: 'Employee mission', 
+            txt: ''
+        },
+        {
+            key: 6,
+            btnName: 'Client mission', 
+            txt: ''
+        },
+    ]
+
     return(
         <div id="footer">
             <div className="footer">
@@ -24,7 +59,16 @@ function Header(){
                 </div>
                 <div id="about">
                     <h4>About us</h4>
-                    <ul>
+                    {
+                        abouts.map( abt =>
+                            (
+                                <div key={abt.key}>
+                                    <Pop btnName={abt.btnName} txt={abt.txt} />
+                                </div>                                              
+                            )      
+                        )
+                    }
+                    {/* <ul>
                         <li>Offices</li>
                         <li>Services</li>
                         <li>Vision</li>
@@ -32,7 +76,7 @@ function Header(){
                         <li>Environmental mission</li>
                         <li>Employee mission</li>
                         <li>Client mission</li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div id="contacts">
                     <h4>Contacts</h4>
