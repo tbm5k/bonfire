@@ -11,13 +11,13 @@ function Header(){
                 <div id="handles">
                     <h4>Social handles</h4>
                     <div id="socialLogos">
-                        <a href="https://twitter.com/bonfiresafaris" target="_blank">
+                        <a href="https://twitter.com/bonfiresafaris" target="_blank" rel="noopener noreferrer">
                             <TwitterIcon style={{ color: "#FFA500"}}/>
                         </a>
-                        <a href="https://www.instagram.com/bonfireadventures" target="_blank">
+                        <a href="https://www.instagram.com/bonfireadventures" target="_blank" rel="noopener noreferrer">
                             <InstagramIcon style={{ color: "#FFA500"}}/>
                         </a>
-                        <a href="https://web.facebook.com/bonfireadventures" target="_blank">
+                        <a href="https://web.facebook.com/bonfireadventures" target="_blank" rel="noopener noreferrer">
                             <FacebookIcon style={{ color: "#FFA500"}}/>
                         </a>
                     </div>

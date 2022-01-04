@@ -9,8 +9,6 @@ const Cities = ({match}) => {
     const cities = useSelector( state => state.cities);
     const dispatch = useDispatch();
 
-    console.log(match)
-
     useEffect(() => {
         dispatch(fetchCities(match.url));
     }, []);
