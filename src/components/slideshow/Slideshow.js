@@ -1,6 +1,5 @@
 import React from 'react';
 import './Slideshow.css';
-import photo from '../images/slideshow/giraffe.jpg';
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css';
 

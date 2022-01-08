@@ -10,6 +10,8 @@ function Item({match}){
     const hotel = useSelector(state => state.hotels.hotel)
     const dispatch = useDispatch()
 
+    console.log(hotel)
+
     useEffect(() => {  
         dispatch(fetchHotel(match.url))
     }, [])
@@ -31,20 +33,19 @@ function Item({match}){
                                 <thead>
                                     <tr>
                                         <th>Meal plan</th>
-                                        <th>4 Day SGR</th>
-                                        <th>4 Day flight</th>
+                                        <th>3 Day SGR</th>
+                                        <th>5 Day SGR</th>
+                                        <th>3 Day flight</th>
+                                        <th>5 Day flight</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr className="h-24">
-                                        <td>Half board</td>
-                                        <td>Ksh 17000 <br/> Ksh 16000 + 5000 BP</td>
-                                        <td>Ksh 31500 <br/> Ksh 30500 + 5000 BP</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Full board</td>
-                                        <td>Ksh 20000 <br/> Ksh 19000 + 5000 BP</td>
-                                        <td>Ksh 34500 <br/> Ksh 33500 + 5000 BP</td>
+                                        <td>{hotel.pricePackage.mealPlan}</td>
+                                        <td>{`Ksh ${hotel.pricePackage.threeDaySGR}`}</td>
+                                        <td>{`Ksh ${hotel.pricePackage.fiveDaySGR}`}</td>
+                                        <td>{`Ksh ${hotel.pricePackage.threeDayFlying}`}</td>
+                                        <td>{`Ksh ${hotel.pricePackage.fiveDayFlying}`}</td>
                                     </tr>
                                 </tbody>
                             </table>
