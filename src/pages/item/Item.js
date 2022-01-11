@@ -10,8 +10,6 @@ function Item({match}){
     const hotel = useSelector(state => state.hotels.hotel)
     const dispatch = useDispatch()
 
-    console.log(hotel)
-
     useEffect(() => {  
         dispatch(fetchHotel(match.url))
     }, [])
@@ -40,13 +38,16 @@ function Item({match}){
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr className="h-24">
-                                        <td>{hotel.pricePackage.mealPlan}</td>
-                                        <td>{`Ksh ${hotel.pricePackage.threeDaySGR}`}</td>
-                                        <td>{`Ksh ${hotel.pricePackage.fiveDaySGR}`}</td>
-                                        <td>{`Ksh ${hotel.pricePackage.threeDayFlying}`}</td>
-                                        <td>{`Ksh ${hotel.pricePackage.fiveDayFlying}`}</td>
-                                    </tr>
+                                    {
+                                        hotel.pricePackageList.map( pkg => (
+                                            <tr className="h-24">
+                                                <td>{pkg.mealPlan}</td>
+                                                <td>{`Ksh ${pkg.threeDaySgr}`}</td>
+                                                <td>{`Ksh ${pkg.fiveDaySgr}`}</td>
+                                                <td>{`Ksh ${pkg.threeDayFlying}`}</td>
+                                                <td>{`Ksh ${pkg.fiveDayFlying}`}</td>
+                                            </tr>
+                                    ))}
                                 </tbody>
                             </table>
                             <div className="flex flex-row justify-between">
