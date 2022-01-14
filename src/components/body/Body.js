@@ -1,6 +1,7 @@
 import React, {lazy, Suspense} from 'react';
 import './Body.css';
 import { Switch, Route } from 'react-router-dom';
+import Form from '../bookForm/Form';
 
 const Home = lazy(() => import('../../pages/home/Home'));
 const Places = lazy(() => import('../../pages/places/Places'));
@@ -22,6 +23,7 @@ function Body(){
                     <Route exact path="/continent/:continentId/country/:countryId/city/:cityId/hotel/:hotelId" component={Item}/>
                     <Route path="/deals" component={Deals}/>
                     {/* <Route path="/item/:id" component={Item}/> */}
+                    <Route exact path="/continent/:continentId/country/:countryId/city/:cityId/hotel/:hotelId/book" component={Form}/>
                     <Route component={NotFound}/>
                 </Switch>
             </Suspense>

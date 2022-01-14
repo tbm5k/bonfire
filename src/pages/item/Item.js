@@ -4,6 +4,7 @@ import { fetchHotel } from '../../redux/actions/hotelActions';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import './item.css';
+import { Link } from 'react-router-dom';
 
 function Item({match}){
 
@@ -51,8 +52,11 @@ function Item({match}){
                                 </tbody>
                             </table>
                             <div className="flex flex-row justify-between">
-                                <button className="bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-40 h-11 mx-auto">Book</button>
-                                <button className="bg-bonfireorange hover:bg-darkbonfireorange text-lg font-bold text-white rounded-xl w-40 h-11 mx-auto">Offer</button>
+                                <Link 
+                                to={`${match.url}/book`} 
+                                className="bg-bonfireorange hover:bg-darkbonfireorange text-lg text-white text-center rounded-xl w-full h-11 mx-auto">
+                                    Book
+                                </Link>
                             </div>
                         </div>
                     </div>
