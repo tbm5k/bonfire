@@ -26,37 +26,30 @@ function Item({match}){
                 hotel ? (
                     <div className="flex flex-row justify-between">
                         <img className="h-96 w-80 object-cover rounded-2xl" src="https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg" alt=""/>
-                        <div className="flex flex-col justify-between w-1/2">      
+                        <div className="flex flex-col w-1/2 px-3">      
                             <p className="font-bold">{hotel.hotelName}</p>   
-                            <table className="table-auto text-sm text-left w-full">
-                                <thead>
-                                    <tr>
-                                        <th>Meal plan</th>
-                                        <th>3 Day SGR</th>
-                                        <th>5 Day SGR</th>
-                                        <th>3 Day flight</th>
-                                        <th>5 Day flight</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {
-                                        hotel.pricePackageList.map( pkg => (
-                                            <tr className="h-24">
-                                                <td>{pkg.mealPlan}</td>
-                                                <td>{`Ksh ${pkg.threeDaySgr}`}</td>
-                                                <td>{`Ksh ${pkg.fiveDaySgr}`}</td>
-                                                <td>{`Ksh ${pkg.threeDayFlying}`}</td>
-                                                <td>{`Ksh ${pkg.fiveDayFlying}`}</td>
-                                            </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                            <div className="flex flex-row justify-between">
-                                <Link 
-                                to={`${match.url}/book`} 
-                                className="bg-bonfireorange hover:bg-darkbonfireorange text-lg text-white text-center rounded-xl w-full h-11 mx-auto">
-                                    Book
-                                </Link>
+                            <div className=' my-6'>
+                                <ul className=' flex flex-row font-bold text-lg'>
+                                    <li>Meal plan</li>
+                                    <li>3 Day SGR</li>
+                                    <li>5 Day SGR</li>
+                                    <li>3 Day flight</li>
+                                    <li>5 Day flight</li>
+                                </ul>
+                                {
+                                    hotel.pricePackageList.map( pkg => (
+                                        <div className=" h-24 border border-gray-300 rounded-3xl flex flex-row justify-around my-4">
+                                            <p className=' flex items-center font-bold'>{pkg.mealPlan}</p>
+                                            <p className=' flex items-center'>{`Ksh ${pkg.threeDaySgr}`}</p>
+                                            <p className=' flex items-center'>{`Ksh ${pkg.fiveDaySgr}`}</p>
+                                            <p className=' flex items-center'>{`Ksh ${pkg.threeDayFlying}`}</p>
+                                            <p className=' flex items-center'>{`Ksh ${pkg.fiveDayFlying}`}</p>
+                                        </div>                                    
+                                    ))
+                                }
+                            </div>
+                            <div className=' flex justify-end'>
+                                <Link to={`${match.url}/book`} className=' w-28 h-10 rounded-xl text-center flex items-center justify-center text-white bg-bonfireorange'>Book</Link>
                             </div>
                         </div>
                     </div>
