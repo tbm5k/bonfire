@@ -38,7 +38,7 @@ function Item({match}){
                                 </ul>
                                 {
                                     hotel.pricePackageList.map( pkg => (
-                                        <div className=" h-24 border border-gray-300 rounded-3xl flex flex-row justify-around my-4">
+                                        <div className=" h-24 border border-gray-300 rounded-xl flex flex-row justify-around my-4">
                                             <p className=' flex items-center font-bold'>{pkg.mealPlan}</p>
                                             <p className=' flex items-center'>{`Ksh ${pkg.threeDaySgr}`}</p>
                                             <p className=' flex items-center'>{`Ksh ${pkg.fiveDaySgr}`}</p>
