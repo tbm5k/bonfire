@@ -1,12 +1,11 @@
-FROM node:14.7-buster
+FROM node:16.13-alpine
 
 WORKDIR /app
 
-COPY package.json package.json
-COPY package-lock.json package-lock.json
+COPY package.json ./
 
-RUN npm install
+RUN npm i
 
-COPY . .
+COPY . ./
 
 CMD ["npm", "start"]
