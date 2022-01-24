@@ -4,10 +4,6 @@ import { fetchHotel } from "../../redux/actions/hotelActions";
 
 const Form = ({match}) => {
 
-    const dispatch = useDispatch()
-    const hotel = useSelector(state => state.hotels.hotel)
-    let hotelUrl = match.url.split(`/book`)[0]
-
     const [booking, setBooking] = useState({
         count: '',
         hotelName: '',
@@ -16,22 +12,26 @@ const Form = ({match}) => {
         to: ''
     });
 
+    const dispatch = useDispatch()
+    const hotel = useSelector(state => state.hotels.hotel)
+    let hotelUrl = match.url.split(`/book`)[0]
+
     useEffect(() => {
         dispatch(fetchHotel(hotelUrl))
     }, [])
+
+    const handleChange = e => {
+        const name = e.target.name
+        setBooking({
+            [name]: e.target.value
+        })
+    }
 
     const handleSubmit = e => {
         console.log(booking)
         e.preventDefault()
     }
-
-    const handleChange = e => {
-        console.log(e.target.value)
-        setBooking({
-            [e.target.name]: e.target.value
-        })
-    }
-
+    
     return(
         <div className=" flex flex-col items-center">
             <h3 className=" font-bold pb-4 text-3xl">Booking</h3>
@@ -59,11 +59,11 @@ const Form = ({match}) => {
                         <div className=" flex flex-rol pb-4 justify-between">
                             <div className=" flex flex-col">
                                 <label>From</label>
-                                <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" type="date"/>
+                                <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" type="date" name="from" value={booking.from} onChange={handleChange}/>
                             </div>
                             <div className=" flex flex-col">
                                 <label>To</label>
-                                <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" type="date"/>
+                                <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" type="date" to="to" value={booking.to} onChange={handleChange}/>
                             </div>
                         </div>
                         <input className=" w-24 h-8 rounded-xl text-white bg-green-400" type="submit" value="Submit"/>
