@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHotel } from "../../redux/actions/hotelActions";
 
@@ -8,26 +8,47 @@ const Form = ({match}) => {
     const hotel = useSelector(state => state.hotels.hotel)
     let hotelUrl = match.url.split(`/book`)[0]
 
+    const [booking, setBooking] = useState({
+        count: '',
+        hotelName: '',
+        mealPlan: '',
+        from: '',
+        to: ''
+    });
+
     useEffect(() => {
         dispatch(fetchHotel(hotelUrl))
-    })
+    }, [])
+
+    const handleSubmit = e => {
+        console.log(booking)
+        e.preventDefault()
+    }
+
+    const handleChange = e => {
+        console.log(e.target.value)
+        setBooking({
+            [e.target.name]: e.target.value
+        })
+    }
 
     return(
-        <div>
+        <div className=" flex flex-col items-center">
+            <h3 className=" font-bold pb-4 text-3xl">Booking</h3>
             {
                 hotel? (
-                    <form>
-                        <div>
+                    <form className=" w-1/2" onSubmit={handleSubmit}>
+                        <div className=" flex flex-col pb-4">
                             <label for="count">Numbe of people</label>
-                            <input id="count" type="number"/>
+                            <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" name="count" id="count" type="number" onChange={handleChange} value={booking.count}/>
                         </div>
-                        <div>
+                        <div className=" flex flex-col pb-4">
                             <label for="place">Hotel</label>
-                            <input id="place" type="text" value={hotel.hotelName}/>
+                            <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" name="hotelName" id="place" type="text" onChange={handleChange} value={booking.hotelName}/>
                         </div>
-                        <div>
+                        <div className=" flex flex-col pb-4">
                             <label for="plans">Meal plan</label>
-                            <select id="plans" type="text">
+                            <select className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" name="mealPlan" id="plans" type="text" value={booking.mealPlan} onChange={handleChange}>
                                 {
                                     hotel.pricePackageList.map( price => (
                                         <option value={price.mealPlan}>{price.mealPlan}</option>
@@ -35,7 +56,17 @@ const Form = ({match}) => {
                                 }
                             </select>
                         </div>
-                        <input type="submit" value="Submit"/>
+                        <div className=" flex flex-rol pb-4 justify-between">
+                            <div className=" flex flex-col">
+                                <label>From</label>
+                                <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" type="date"/>
+                            </div>
+                            <div className=" flex flex-col">
+                                <label>To</label>
+                                <input className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" type="date"/>
+                            </div>
+                        </div>
+                        <input className=" w-24 h-8 rounded-xl text-white bg-green-400" type="submit" value="Submit"/>
                     </form>
     
                 ): null
