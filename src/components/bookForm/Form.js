@@ -11,7 +11,7 @@ const Form = ({match}) => {
     const [booking, setBooking] = useState({
         count: '',
         hotelName: hotel.hotelName,
-        mealPlan: '',
+        mealPlan: 'full meal',
         from: '',
         to: ''
     });
@@ -30,7 +30,6 @@ const Form = ({match}) => {
     }
 
     const handleSubmit = e => {
-        console.log(booking)
         e.preventDefault()
     }
     
@@ -51,11 +50,8 @@ const Form = ({match}) => {
                         <div className=" flex flex-col pb-4">
                             <label for="plans">Meal plan</label>
                             <select className=" h-10 border border-gray-300 rounded-xl px-3 mt-2" name="mealPlan" id="plans" type="text" value={booking.mealPlan} onChange={handleChange}>
-                                {
-                                    hotel.pricePackageList.map( price => (
-                                        <option value={price.mealPlan}>{price.mealPlan}</option>
-                                    ))
-                                }
+                                <option value={`full meal`}>full meal</option>
+                                <option value={`half meal`}>half meal</option>
                             </select>
                         </div>
                         <div className=" flex flex-rol pb-4 justify-between">
