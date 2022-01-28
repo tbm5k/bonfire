@@ -10,6 +10,7 @@ const NotFound = lazy(() => import('../../pages/notfound/NotFound'));
 const Item = lazy(() => import('../../pages/item/Item'));
 const Countries = lazy(() => import('../../pages/countries/Countries'));
 const Cities = lazy(() => import('../../pages/cities/Cities'))
+const Admin = lazy(() => import('../../pages/admin/Admin'))
 
 function Body(){
     return(
@@ -24,6 +25,7 @@ function Body(){
                     <Route path="/deals" component={Deals}/>
                     {/* <Route path="/item/:id" component={Item}/> */}
                     <Route exact path="/continent/:continentId/country/:countryId/city/:cityId/hotel/:hotelId/book" component={Form}/>
+                    <Route path="/admin" component={Admin}/>
                     <Route component={NotFound}/>
                 </Switch>
             </Suspense>
