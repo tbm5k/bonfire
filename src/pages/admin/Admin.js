@@ -1,4 +1,6 @@
-import React, { useImperativeHandle, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { postHotel } from "../../redux/actions/hotelActions";
 
 const Admin = () => {
 
@@ -9,6 +11,13 @@ const Admin = () => {
         hotel: '',
         images: []
     })
+
+    const dispatch = useDispatch();
+
+    //store the required variables(continent, country, city) and use them in the post hotel action parameter
+    useEffect(() => {
+        dispatch(postHotel())
+    }, [])
 
     const handleChange = e => {
         setHotel({
@@ -40,6 +49,10 @@ const Admin = () => {
                 <div className=" flex flex-col pb-4">
                     <label for="hotelName">Hotel name</label>
                     <input onChange={handleChange} className=" h-9 border border-gray-300 rounded-xl px-3 mt-2 focus:border focus:border-bonfireorange" id="hotelName" name="hotel" type="text"/>
+                </div>
+                <div>
+                    <label>Images</label>
+                    <input></input>
                 </div>
                 <input className=" w-24 h-8 rounded-xl text-white bg-green-400" type="submit" value="Add"/>
             </form>
