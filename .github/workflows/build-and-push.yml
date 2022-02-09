@@ -7,28 +7,28 @@ on:
 
 jobs: 
   buildImage: 
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    
-    - name: Setting up docker buildx
-      uses: docker/setup-buildx-action@v1
-      id: buildx
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Setting up docker buildx
+        uses: docker/setup-buildx-action@v1
+        id: buildx
 
-    #authenticate against gh container registry
-    - name: Login to ghcr
-      uses: docker/login-action@v1
-      with:
-        registry: ghcr.io
-        username: ${{github.actor}}
-        password: ${{secrets.GHCR_PAT}}
+      #authenticate against gh container registry
+      - name: Login to ghcr
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{github.actor}}
+          password: ${{secrets.GHCR_PAT}}
 
-    - name: Build and push
-      uses: docker/build-push-action@v2
-      with:
-      tags:
-        user/frontend:latest
-        ghcr.io/frontend:latest
-      #condition to push on main branch
-      push : ${{ github.ref == 'refs/head/main'}}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+        tags:
+          user/frontend:latest
+          ghcr.io/frontend:latest
+        #condition to push on main branch
+        push : ${{ github.ref == 'refs/head/main'}}
