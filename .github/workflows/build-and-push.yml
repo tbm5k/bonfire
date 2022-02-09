@@ -19,4 +19,19 @@ jobs:
     - name: Build image
       run: docker build . 
 
-    #add step to push image to artifact repository
+    #authenticate against gh container registry
+    - name: Login to ghcr
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{github.actor}}
+        password: ${{secrets.GHCR_PAT}}
+
+    - name: Build and push
+      uses: docker/build-push-action@v2
+      with:
+      tags:
+        user/frontend:latest
+        ghcr.io/frontend:latest
+      #condition to push on main branch
+      push : ${{ github.ref == 'refs/head/main'}}
