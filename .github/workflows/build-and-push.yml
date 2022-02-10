@@ -31,5 +31,4 @@ jobs:
           tags: |
             tbm5k/bonfire-frontend:latest
             ghcr.io/tbm5k/bonfire-frontend:latest
-          push:
-            true
+          push: ${{ github.ref == 'refs/heads/main' }}
