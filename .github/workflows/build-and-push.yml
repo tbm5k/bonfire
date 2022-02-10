@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: |
-            tbm5k/frontend:latest
-            ghcr.io/tbm5k/frontend:latest
-          #condition to push on main branch
-          push : ${{ github.ref == 'refs/head/main'}}
+            tbm5k/bonfire-frontend:latest
+            ghcr.io/tbm5k/bonfire-frontend:latest
+          push : 
+            true
