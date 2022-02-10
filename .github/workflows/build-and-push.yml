@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           tags: |
-            user/frontend:latest
-            ghcr.io/frontend:latest
+            tbm5k/frontend:latest
+            ghcr.io/tbm5k/frontend:latest
           #condition to push on main branch
           push : ${{ github.ref == 'refs/head/main'}}
