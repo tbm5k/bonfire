@@ -4,6 +4,7 @@ on:
   push:
     branches: 
       - main
+  workflow_dispatch:
 
 jobs: 
   buildImage: 
@@ -30,5 +31,5 @@ jobs:
           tags: |
             tbm5k/bonfire-frontend:latest
             ghcr.io/tbm5k/bonfire-frontend:latest
-          push : 
+          push:
             true
