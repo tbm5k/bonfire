@@ -7,6 +7,8 @@ COPY yarn.lock ./
 
 RUN yarn install
 
-COPY . .
+COPY src ./
+COPY craco.config.js ./
+COPY tailwind.config.js ./
 
 CMD ["yarn", "start"]
