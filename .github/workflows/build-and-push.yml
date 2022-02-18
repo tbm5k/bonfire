@@ -38,4 +38,4 @@ jobs:
         with:
           push: true
           # tags: ghcr.io/tbm5k/bonfire-frontend:latest
-          tags: gcr.io/${{secrets.PROJECT_ID}}/bonfire-frontend:latest
+          tags: gcr.io/${{secrets.GCP_PROJECT_ID}}/bonfire-frontend:latest
