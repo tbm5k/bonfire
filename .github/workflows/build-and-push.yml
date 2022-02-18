@@ -44,8 +44,13 @@ jobs:
       - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
         with:
           cluster_name: ${{ secrets.CLUSTER_NAME }}
-          location: europe-west4-a
+          location: ${{ secrets.GKE_LOCATION }}
           credentials: ${{ secrets.GKE_CREDENTIALS }}
+
+      - name: set default zone and region
+        run: |
+          gcloud config set compute/zone europe-west4-a
+          gcloud config set compute/region europe-west4
 
       - name: install kubectl 
         run: gcloud components install kubectl
