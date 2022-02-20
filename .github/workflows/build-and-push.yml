@@ -38,28 +38,28 @@ jobs:
         with:
           push: true
           # tags: ghcr.io/tbm5k/bonfire-frontend:latest
-          tags: gcr.io/${{secrets.GCP_PROJECT_ID}}/bonfire-frontend:latest
+          tags: gcr.io/${{secrets.GCP_PROJECT_ID}}/bonfire-frontend:v1
       
       # Get the GKE credentials so we can deploy to the cluster
-      - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
-        with:
-          cluster_name: ${{ secrets.CLUSTER_NAME }}
-          location: ${{ secrets.GKE_LOCATION }}
-          credentials: ${{ secrets.GKE_CREDENTIALS }}
+      # - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
+      #   with:
+      #     cluster_name: ${{ secrets.CLUSTER_NAME }}
+      #     location: ${{ secrets.GKE_LOCATION }}
+      #     credentials: ${{ secrets.GKE_CREDENTIALS }}
 
-      - name: set default zone and region
-        run: |
-          gcloud config set compute/zone europe-west4-a
-          gcloud config set compute/region europe-west4
+      # - name: set default zone and region
+      #   run: |
+      #     gcloud config set compute/zone europe-west4-a
+      #     gcloud config set compute/region europe-west4
 
-      - name: install kubectl 
-        run: gcloud components install kubectl
+      # - name: install kubectl 
+      #   run: gcloud components install kubectl
       
-      - name: Get authentication credentials for the cluster
-        run: gcloud container clusters get-credentials ${{secrets.CLUSTER_NAME}}
+      # - name: Get authentication credentials for the cluster
+      #   run: gcloud container clusters get-credentials ${{secrets.CLUSTER_NAME}}
 
-      - name: create a deployment
-        run: kubectl create deployment test --image=gcr.io/${{secrets.GCP_PROJECT_ID}}/bonfire-frontend:latest
+      # - name: create a deployment
+      #   run: kubectl create deployment test --image=gcr.io/${{secrets.GCP_PROJECT_ID}}/bonfire-frontend:latest
 
-      - name: expose deployment
-        run: kubectl expose deployment test --type LoadBalancer --port 80 --target-port 3000
+      # - name: expose deployment
+      #   run: kubectl expose deployment test --type LoadBalancer --port 80 --target-port 3000
