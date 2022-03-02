@@ -59,7 +59,7 @@ function Item({match}){
             }
 
             {/* Image slideshow */}
-            <div className=" mt-14">
+            {/* <div className=" mt-14">
                 <Slide>
                     {
                         hotel.imageList( image => (
@@ -69,7 +69,7 @@ function Item({match}){
                         ))
                     }
                 </Slide>
-            </div>
+            </div> */}
         </div>
     );
 }
