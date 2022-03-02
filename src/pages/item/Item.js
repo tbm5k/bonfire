@@ -62,7 +62,7 @@ function Item({match}){
             <div className=" mt-14">
                 <Slide>
                     {
-                        images.map( image => (
+                        hotel.imageList( image => (
                             <div className=" h-40 w-80 my-auto rounded-2xl mr-4 bg-gray-400" style={{'backgroundImage': `url(${image.url})`}}>
                                 
                             </div>                        
