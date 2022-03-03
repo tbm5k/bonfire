@@ -28,7 +28,7 @@ export default function Places(){
                                 {
                                     continent.countryList.map( country => (
                                         <div>
-                                            <Cube key={country.countryId} placeName={country.countryName}/>                                
+                                            <Cube key={country.countryId} placeName={country.countryName} image={country.cityList[0].hotelList[0].imageList[0].imageUrl}/>                                
                                         </div>
                                     ))
                                 }

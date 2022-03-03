@@ -25,8 +25,8 @@ function Home(){
                 <div className="flex flex-row justify-evenly flex-wrap mt-6 mb-6">
                 {   
                     hotels !== undefined ? (
-                    hotels.map( tile => (
-                        <Tile key={tile.cityId} cityName={tile.cityName} text='' image={'null'}/>
+                        hotels.map( tile => (
+                        <Tile key={tile.cityId} cityName={tile.cityName} text='' image={tile.hotelList[0].imageList[0].imageUrl}/>
                     ))
                     ) : <div>Empty list</div>
                 }
@@ -40,8 +40,8 @@ function Home(){
                 <div className="flex flex-row justify-evenly flex-wrap mt-6 mb-6">
                     {
                         hotels !== undefined ? (
-                        hotels.map(city => (
-                            <Cube key={city.cityId} placeName={city.cityName} offer={"10% discount"}/>
+                            hotels.map(city => (
+                            <Cube key={city.cityId} placeName={city.cityName} offer={"10% discount"} image={city.hotelList[1].imageList[0].imageUrl}/>
                         ))
                          ) : <div>Empty list</div>
                     }

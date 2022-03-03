@@ -25,7 +25,7 @@ const Cities = ({match}) => {
                                 city.hotelList.map( hotel => (
                                     <div className=' mx-3.5'>
                                         <Link to={`${match.url}/city/${city.cityId}/hotel/${hotel.hotelId}`}>
-                                            <Tile placeName={hotel.hotelName} image={hotel.imageList[0]}/>
+                                            <Tile placeName={hotel.hotelName} image={hotel.imageList[0].imageUrl}/>
                                         </Link>
                                     </div>
                                 ))

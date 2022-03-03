@@ -22,7 +22,7 @@ const Countries = ({match}) => {
                 countries !== undefined ? (
                     countries.map( country => (
                         <Link to={`${match.url}/country/${country.countryId}`}>
-                            <Cube key={country.countryId} placeName={country.countryName}/>
+                            <Cube key={country.countryId} placeName={country.countryName} image={country.cityList[0].hotelList[0].imageList[0].imageUrl}/>
                         </Link>
                     ))
                 ) : (

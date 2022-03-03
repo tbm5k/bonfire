@@ -8,24 +8,20 @@ import { Link } from 'react-router-dom';
 
 function Item({match}){
 
-    const hotel = useSelector(state => state.hotels.hotel)
     const dispatch = useDispatch()
 
     useEffect(() => {  
         dispatch(fetchHotel(match.url))
     }, [])
 
-    const images = [
-        {url: "https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg"},
-        {url: "https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg"},
-    ];
+    const hotel = useSelector(state => state.hotels.hotel)
 
     return(
         <div className="">
             {
                 hotel ? (
                     <div className="flex flex-row justify-between">
-                        <img className="h-96 w-80 object-cover rounded-2xl" src="https://images.freeimages.com/images/large-previews/0d6/blue-flowers-with-macro-4-1400913.jpg" alt=""/>
+                        <img className="h-96 w-80 object-cover rounded-2xl" src={`${hotel.imageList[0].imageUrl}`} alt=""/>
                         <div className="flex flex-col w-1/2 px-3">      
                             <p className="font-bold">{hotel.hotelName}</p>   
                             <div className=' my-6'>
