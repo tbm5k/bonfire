@@ -4,6 +4,7 @@ import Cube from '../../components/cube/Cube';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContinents } from '../../redux/actions/continentActions';
 import { Link } from 'react-router-dom';
+import { fetchHotels } from '../../redux/actions/hotelActions';
 
 export default function Places(){
 
@@ -14,12 +15,16 @@ export default function Places(){
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    useEffect( () => {
+        dispatch(fetchHotels())
+    }, [])
+
     //retreiving the redux state for viewing purposes by use of the useSelector hook
     const continents = useSelector( state => state.continents.continents)
-    
+    const hotels = useSelector( state => state.hotels.hotels)
     return(
         <div>
-            <Banner />
+            <Banner cityList={hotels}/>
                 {
                     continents !== undefined ? (continents.map( continent => (
                         <div className='flex flex-col mt-9 mb-9'>
