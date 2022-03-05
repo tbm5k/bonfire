@@ -2,10 +2,14 @@ import React from 'react';
 import './Banner.css';
 import Slideshow from '../slideshow/Slideshow';
 
-function Banner(){
+function Banner({cityList}){
     return(
         <div id="banner">
-            <Slideshow />
+            {
+                cityList ? (
+                    <Slideshow cities={cityList}/>
+                ) : null
+            }
         </div>
     );
 }

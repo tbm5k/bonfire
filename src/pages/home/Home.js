@@ -19,7 +19,7 @@ function Home(){
 
     return(
         <div id="home">
-            <Banner />
+            <Banner cityList={hotels}/>
             <div className='flex flex-col mt-9 mb-9'>
                 <h2 className='text-center text-4xl font-bold'>Places to visit</h2>
                 <div className="flex flex-row justify-evenly flex-wrap mt-6 mb-6">
