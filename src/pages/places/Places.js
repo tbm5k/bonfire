@@ -25,17 +25,50 @@ export default function Places(){
     return(
         <div>
             <Banner cityList={hotels}/>
+                {/* {
+                    continents !== undefined ? (
+                        continents.map(continent => (
+                            <div className='flex flex-col mt-9 mb-9'>
+                                <h2 className='text-center text-4xl font-bold'>{continent.continentName}</h2>
+                                <div className='flex flex-row justify-evenly overflow-hidden mt-6 mb-6'>
+                                    {
+                                        continent.countryList.map
+                                    }
+                                </div>
+                            </div>
+                        ))
+                    ): null
+                    
+                } */}
                 {
                     continents !== undefined ? (continents.map( continent => (
                         <div className='flex flex-col mt-9 mb-9'>
                             <h2 className='text-center text-4xl font-bold'>{continent.continentName}</h2>
                             <div className='flex flex-row justify-evenly overflow-hidden mt-6 mb-6'>
                                 {
-                                    continent.countryList.map( country => (
-                                        <div>
-                                            <Cube key={country.countryId} placeName={country.countryName} image={country.cityList[0].hotelList[0].imageList[0].imageUrl}/>                                
-                                        </div>
-                                    ))
+                                    continent.countryList !== undefined ? (
+                                        continent.countryList.map( country => (
+                                            country.cityList !== undefined ? (
+                                                country.cityList.map( city => (
+                                                    city.hotelList !== undefined ? (
+                                                        city.hotelList.map( hotel => (
+                                                            hotel.imageList !== undefined ? (
+                                                                hotel.imageList.imageUrl !== undefined ? (
+                                                                    <Cube key={country.countryId} placeName={country.countryName} image={country.cityList[0].hotelList[0].imageList[0].imageUrl}/>
+                                                                ) : <Cube key={country.countryId} placeName={country.countryName}/>
+                                                            ) : null                                
+                                                        ))
+                                                    ): null
+                                                ))
+                                            ) : null
+                                        ))
+                                    ): null
+
+                                    // continent.countryList.map( country => (
+                                    //     <div>
+                                    //         <Cube key={country.countryId} placeName={country.countryName} image={country.cityList[0].hotelList[0].imageList[0].imageUrl}/>                                
+                                    //     </div>
+                                    // ))
                                 }
                             </div>
                             <Link to={`/continent/${continent.continentId}`} className='bg-bonfireorange hover:bg-darkbonfireorange rounded-xl w-52 h-11 mx-auto'>
